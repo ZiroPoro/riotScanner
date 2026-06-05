@@ -1,0 +1,31 @@
+# .gitignore
+
+bin/
+*.exe
+*.dll
+*.so
+*.dylib
+
+# Go
+vendor/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Local secrets and calibration captures
+.env
+*.local.yaml
+captures/
+screenshots/
+
+# Clone APKs (large binaries)
+assets/clones/*.apk
+
+# Generated QR samples (keep placeholder)
+!assets/qr/.gitkeep
