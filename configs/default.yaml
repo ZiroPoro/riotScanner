@@ -1,0 +1,22 @@
+emulator:
+  emulator_path: "C:\\Users\\%USERNAME%\\AppData\\Local\\Android\\Sdk\\emulator\\emulator.exe"
+  adb_path: "C:\\Users\\%USERNAME%\\AppData\\Local\\Android\\Sdk\\platform-tools\\adb.exe"
+  avd_name: "Pixel_6_API_34"
+  serial: "emulator-5554"
+  boot_timeout: 3m
+  extra_args:
+    - "-camera-back"
+    - "none"
+    - "-camera-front"
+    - "emulated"
+    - "-no-snapshot-load"
+
+clone:
+  provider: adb
+  source_package: com.riotgames.league.wildrift
+  clone_package: com.riotgames.league.wildrift.clone
+  clone_apk_path: "assets/clones/wildrift_clone.apk"
+  ldconsole_path: "C:\\LDPlayer\\LDPlayer9\\ldconsole.exe"
+
+poll_ms: 500
+log_level: info
