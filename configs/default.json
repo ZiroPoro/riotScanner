@@ -1,0 +1,17 @@
+{
+  "emulator": {
+    "avd_name": "Pixel_6_API_34",
+    "serial": "emulator-5554",
+    "boot_timeout": "3m"
+  },
+  "clone": {
+    "provider": "adb",
+    "source_package": "com.riotgames.league.wildrift",
+    "clone_package": "com.riotgames.league.wildrift.clone"
+  },
+  "poll_ms": 500,
+  "qr_scan": {
+    "enabled": true,
+    "qr_image_path": "assets/qr/sample_qr.png"
+  }
+}
