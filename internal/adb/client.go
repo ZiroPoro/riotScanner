@@ -1,6 +1,7 @@
 package adb
 
 import (
+	"bytes"
 	"fmt"
 	"os/exec"
 	"path/filepath"
@@ -86,7 +87,7 @@ func (c *Client) Screenshot() ([]byte, error) {
 	if err != nil {
 		return nil, fmt.Errorf("screencap: %w", err)
 	}
-	return out, nil
+	return bytes.ReplaceAll(out, []byte("\r\n"), []byte("\n")), nil
 }
 
 func (c *Client) Push(local, remote string) error {
