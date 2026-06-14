@@ -1,0 +1,44 @@
+emulator:
+  emulator_path: "/Users/slava/Library/Android/sdk/emulator/emulator"
+  adb_path: "/Users/slava/Library/Android/sdk/platform-tools/adb"
+  avd_name: "Pixel_6"
+  serial: "emulator-5554"
+  boot_timeout: 3m
+  extra_args:
+    - "-camera-back"
+    - "none"
+    - "-camera-front"
+    - "emulated"
+    - "-no-snapshot-load"
+
+clone:
+  provider: adb
+  source_package: com.riotgames.league.wildrift
+  clone_package: com.riotgames.league.wildrift.clone
+  clone_apk_path: "assets/clones/wildrift_clone.apk"
+
+poll_ms: 500
+log_level: info
+
+automation:
+  - name: dismiss_popup
+    probes:
+      - { x: 540, y: 1800, r: 255, g: 255, b: 255, tolerance: 15 }
+    tap_x: 540
+    tap_y: 1200
+
+  - name: open_scanner
+    probes:
+      - { x: 100, y: 200, r: 30, g: 144, b: 255, tolerance: 20 }
+    tap_x: 540
+    tap_y: 960
+
+qr_scan:
+  enabled: true
+  qr_image_path: "assets/qr/sample_qr.png"
+  wait_after_ms: 2000
+  detect_probes:
+    - { x: 540, y: 100, r: 0, g: 0, b: 0, tolerance: 10 }
+    - { x: 540, y: 1800, r: 50, g: 50, b: 50, tolerance: 15 }
+  success_probes:
+    - { x: 540, y: 960, r: 0, g: 200, b: 0, tolerance: 30 }
