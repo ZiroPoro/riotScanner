@@ -6,6 +6,7 @@ import (
 	"os"
 	"os/exec"
 	"path/filepath"
+	"runtime"
 	"strings"
 	"time"
 
@@ -101,8 +102,14 @@ func ResolveSDKPaths(sdkRoot string) (emulatorPath, adbPath string, err error) {
 		return "", "", fmt.Errorf("ANDROID_HOME or ANDROID_SDK_ROOT not set")
 	}
 
-	emulatorPath = filepath.Join(sdkRoot, "emulator", "emulator.exe")
-	adbPath = filepath.Join(sdkRoot, "platform-tools", "adb.exe")
+	emulatorName := "emulator"
+	adbName := "adb"
+	if runtime.GOOS == "windows" {
+		emulatorName += ".exe"
+		adbName += ".exe"
+	}
+	emulatorPath = filepath.Join(sdkRoot, "emulator", emulatorName)
+	adbPath = filepath.Join(sdkRoot, "platform-tools", adbName)
 
 	if _, err := os.Stat(emulatorPath); err != nil {
 		return "", "", fmt.Errorf("emulator not found at %s", emulatorPath)
