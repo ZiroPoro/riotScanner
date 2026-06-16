@@ -29,3 +29,4 @@ assets/clones/*.apk
 
 # Generated QR samples (keep placeholder)
 !assets/qr/.gitkeep
+
