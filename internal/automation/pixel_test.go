@@ -26,7 +26,7 @@ func TestScreenMatcher_MatchAll(t *testing.T) {
 	}
 }
 
-func TestAverageColor(t *testing.T) {
+func TestAverageColorValues(t *testing.T) {
 	img := image.NewRGBA(image.Rect(0, 0, 4, 4))
 	for y := 0; y < 4; y++ {
 		for x := 0; x < 4; x++ {
