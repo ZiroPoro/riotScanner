@@ -8,3 +8,4 @@ require (
 )
 
 require golang.org/x/image v0.18.0 // indirect
+
