@@ -42,4 +42,3 @@ qr_scan:
     - { x: 540, y: 1800, r: 50, g: 50, b: 50, tolerance: 15 }
   success_probes:
     - { x: 540, y: 960, r: 0, g: 200, b: 0, tolerance: 30 }
-# riotscanner
